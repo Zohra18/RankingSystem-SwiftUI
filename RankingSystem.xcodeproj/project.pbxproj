@@ -16,6 +16,7 @@
 		3C08221123E82FE600F07F88 /* InstaUI_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08221023E82FE600F07F88 /* InstaUI_TestTests.swift */; };
 		3C08221C23E82FE600F07F88 /* InstaUI_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08221B23E82FE600F07F88 /* InstaUI_TestUITests.swift */; };
 		3C3FF9FA23F3F23A00EC89F6 /* GamerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FF9F923F3F23A00EC89F6 /* GamerProfileView.swift */; };
+		3C3FFA0123F42B0D00EC89F6 /* Gamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FFA0023F42B0D00EC89F6 /* Gamer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3C08221B23E82FE600F07F88 /* InstaUI_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUI_TestUITests.swift; sourceTree = "<group>"; };
 		3C08221D23E82FE600F07F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C3FF9F923F3F23A00EC89F6 /* GamerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamerProfileView.swift; sourceTree = "<group>"; };
+		3C3FFA0023F42B0D00EC89F6 /* Gamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,9 @@
 		3C0821F823E82FE400F07F88 /* RankingSystem */ = {
 			isa = PBXGroup;
 			children = (
-				3C0821F923E82FE400F07F88 /* AppDelegate.swift */,
-				3C0821FB23E82FE400F07F88 /* SceneDelegate.swift */,
-				3C0821FD23E82FE400F07F88 /* ContentView.swift */,
-				3C3FF9F923F3F23A00EC89F6 /* GamerProfileView.swift */,
+				3C3FF9FD23F42AC800EC89F6 /* App Lifecycle */,
+				3C3FF9FE23F42ADA00EC89F6 /* View */,
+				3C3FFA0223F42B1100EC89F6 /* Model */,
 				3C0821FF23E82FE600F07F88 /* Assets.xcassets */,
 				3C08220423E82FE600F07F88 /* LaunchScreen.storyboard */,
 				3C08220723E82FE600F07F88 /* Info.plist */,
@@ -137,6 +138,32 @@
 				3C08221D23E82FE600F07F88 /* Info.plist */,
 			);
 			path = "InstaUI TestUITests";
+			sourceTree = "<group>";
+		};
+		3C3FF9FD23F42AC800EC89F6 /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				3C0821F923E82FE400F07F88 /* AppDelegate.swift */,
+				3C0821FB23E82FE400F07F88 /* SceneDelegate.swift */,
+			);
+			path = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		3C3FF9FE23F42ADA00EC89F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C0821FD23E82FE400F07F88 /* ContentView.swift */,
+				3C3FF9F923F3F23A00EC89F6 /* GamerProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C3FFA0223F42B1100EC89F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C3FFA0023F42B0D00EC89F6 /* Gamer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +299,7 @@
 			files = (
 				3C0821FA23E82FE400F07F88 /* AppDelegate.swift in Sources */,
 				3C3FF9FA23F3F23A00EC89F6 /* GamerProfileView.swift in Sources */,
+				3C3FFA0123F42B0D00EC89F6 /* Gamer.swift in Sources */,
 				3C0821FC23E82FE400F07F88 /* SceneDelegate.swift in Sources */,
 				3C0821FE23E82FE400F07F88 /* ContentView.swift in Sources */,
 			);

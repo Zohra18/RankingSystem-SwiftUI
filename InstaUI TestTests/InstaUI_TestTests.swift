@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import InstaUI_Test
+@testable import RankingSystem
 
 class InstaUI_TestTests: XCTestCase {
 

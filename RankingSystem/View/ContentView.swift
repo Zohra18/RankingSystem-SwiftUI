@@ -8,15 +8,9 @@
 
 import SwiftUI
 
-struct Gamer: Identifiable {
-    var id = UUID()
-    var gamerName: String
-    var pictureName: String
-    var gamerRank: Int
-    var gamerPoints: Int
-}
-
+// set up of the main view
 struct ContentView: View {
+    
     
     var rankingSystem: [Gamer] = [
         Gamer(gamerName: "x666EdgeLord666x", pictureName: "edgelord", gamerRank: 3, gamerPoints: 667),
@@ -35,8 +29,9 @@ struct ContentView: View {
                 GamerProfileView(gamer: gamer)) {
                     RankingSystemView(rankingSystem: gamer)
                 }
-            }.navigationBarTitle("Ranking")
-
+            }
+            .navigationBarTitle("Ranking")
+            
         }
     }
     
@@ -49,12 +44,13 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
+// view of each cell of the List
 struct RankingSystemView: View {
     
     var rankingSystem: Gamer
     
     var body: some View {
+        
         HStack(spacing: 20) {
             Image(rankingSystem.pictureName)
                 .resizable()
@@ -66,7 +62,7 @@ struct RankingSystemView: View {
                     .font(.title)
                     .foregroundColor(.orange)
                 
-                Text("\(rankingSystem.gamerPoints) points")
+                Text("\(rankingSystem.gamerPoints) RP")
                     .font(.headline)
                     .foregroundColor(Color.green)
             }
