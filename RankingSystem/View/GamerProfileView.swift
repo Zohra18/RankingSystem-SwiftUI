@@ -13,29 +13,31 @@ struct GamerProfileView: View {
     var gamer : Gamer
     
     var body: some View {
-        
+
         VStack(spacing: 20) {
             
             Text(gamer.gamerName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(Color.green)
+                .foregroundColor(Color("mainGreen"))
             
             Image(gamer.pictureName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 300)
+                .mask(Circle())
+                .padding(10)
             
             Text("Rank: \(gamer.gamerRank)")
                 .font(.title)
                 .fontWeight(.medium)
-                .foregroundColor(Color.green)
+                .foregroundColor(Color("mainGreen"))
             
             
             Text("\(gamer.gamerPoints) points")
                 .font(.footnote)
                 .fontWeight(.medium)
-                .foregroundColor(Color.green)
+                .foregroundColor(Color("fadeGreen"))
         }
         .padding()
         .navigationBarTitle("Profile", displayMode: .inline)

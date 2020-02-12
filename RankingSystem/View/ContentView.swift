@@ -11,7 +11,6 @@ import SwiftUI
 // set up of the main view
 struct ContentView: View {
     
-    
     var rankingSystem: [Gamer] = [
         Gamer(gamerName: "x666EdgeLord666x", pictureName: "edgelord", gamerRank: 3, gamerPoints: 667),
         
@@ -56,15 +55,16 @@ struct RankingSystemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
+                .mask(Circle())
             
             VStack(alignment: .leading) {
                 Text(rankingSystem.gamerName)
                     .font(.title)
-                    .foregroundColor(.orange)
+                    .foregroundColor(Color("mainGreen"))
                 
                 Text("\(rankingSystem.gamerPoints) RP")
                     .font(.headline)
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color("fadeGreen"))
             }
         }
     }
