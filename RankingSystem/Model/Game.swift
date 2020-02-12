@@ -9,7 +9,7 @@
 import Foundation
 
 struct Game: Identifiable {
-    var id: UUID
+    var id = UUID()
     var gameName: String
     var gameImage: String
     var releaseYear: Int
@@ -18,5 +18,5 @@ struct Game: Identifiable {
 }
 
 enum GameGenre {
-    case RPG, Action, FPS, Simulation, Horror, Survival, Arcade
+    case RPG, Action, FPS, Simulation, Horror, Survival, Arcade, Plateform, ActionRPG, Roguelike, PostApocaliptic, Adventure, Fantasy, Dark, StoryRich
 }

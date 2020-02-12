@@ -14,4 +14,5 @@ struct Gamer: Identifiable {
     var pictureName: String
     var gamerRank: Int
     var gamerPoints: Int
+    var gameList: [Game]
 }

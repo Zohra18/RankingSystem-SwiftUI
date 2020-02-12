@@ -38,9 +38,16 @@ struct GamerProfileView: View {
                 .font(.footnote)
                 .fontWeight(.medium)
                 .foregroundColor(Color("fadeGreen"))
+            
+//            HStack(spacing: 20) {
+//
+//
+//
+//            }
         }
-        .padding()
+        .padding(30)
         .navigationBarTitle("Profile", displayMode: .inline)
+        
         
         
     }

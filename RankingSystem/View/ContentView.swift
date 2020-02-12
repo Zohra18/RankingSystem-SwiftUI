@@ -11,13 +11,7 @@ import SwiftUI
 // set up of the main view
 struct ContentView: View {
     
-    var rankingSystem: [Gamer] = [
-        Gamer(gamerName: "x666EdgeLord666x", pictureName: "edgelord", gamerRank: 3, gamerPoints: 667),
-        
-        Gamer(gamerName: "gamerGrill", pictureName: "grill", gamerRank: 2, gamerPoints: 789),
-        
-        Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927)
-    ]
+    
     
     
     var body: some View {
