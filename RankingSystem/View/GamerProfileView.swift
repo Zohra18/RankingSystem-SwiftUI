@@ -13,7 +13,7 @@ struct GamerProfileView: View {
     var gamer : Gamer
     
     var body: some View {
-
+        
         VStack(spacing: 20) {
             
             Text(gamer.gamerName)
@@ -39,11 +39,31 @@ struct GamerProfileView: View {
                 .fontWeight(.medium)
                 .foregroundColor(Color("fadeGreen"))
             
-//            HStack(spacing: 20) {
-//
-//
-//
-//            }
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    
+                    ForEach(gamer.gameList) { ownedGames in
+                        VStack {
+                            
+                            Image(ownedGames.gameImage)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                            
+                            Text("\(ownedGames.gameName)")
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("mainGreen"))
+                            
+                            Text("\(ownedGames.completionPercent)%")
+                                .font(.footnote)
+                                .foregroundColor(Color("fadeGreen"))
+                            
+                        }
+                        
+                    }
+                }
+            }
+            
         }
         .padding(30)
         .navigationBarTitle("Profile", displayMode: .inline)
@@ -56,6 +76,6 @@ struct GamerProfileView: View {
 struct GamerProfileView_Previews: PreviewProvider {
     static var previews: some View {
         
-        GamerProfileView(gamer: Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927))
+        GamerProfileView(gamer: Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927, gameList: gameListNostalgia))
     }
 }
