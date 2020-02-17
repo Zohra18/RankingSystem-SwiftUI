@@ -54,7 +54,7 @@ struct RankingSystemView: View {
             VStack(alignment: .leading) {
                 Text(rankingSystem.gamerName)
                     .font(.title)
-                    .foregroundColor(Color("mainGreen"))
+//                    .foregroundColor(Color("mainGreen"))
                 
                 Text("\(rankingSystem.gamerPoints) RP")
                     .font(.headline)
