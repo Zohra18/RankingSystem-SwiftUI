@@ -11,16 +11,13 @@ import SwiftUI
 // set up of the main view
 struct ContentView: View {
     
-    
-    
-    
     var body: some View {
         
         NavigationView {
             List(rankingSystem) { gamer in
                 NavigationLink(destination:
                 GamerProfileView(gamer: gamer)) {
-                    RankingSystemView(rankingSystem: gamer)
+                    RankingSystemView(gamerList: gamer)
                 }
             }
             .navigationBarTitle("Ranking")
@@ -28,35 +25,29 @@ struct ContentView: View {
         }
     }
     
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 
 // view of each cell of the List
 struct RankingSystemView: View {
     
-    var rankingSystem: Gamer
+    var gamerList: Gamer
     
     var body: some View {
         
         HStack(spacing: 20) {
-            Image(rankingSystem.pictureName)
+            Image(gamerList.pictureName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
                 .mask(Circle())
             
             VStack(alignment: .leading) {
-                Text(rankingSystem.gamerName)
+                Text(gamerList.gamerName)
                     .font(.title)
 //                    .foregroundColor(Color("mainGreen"))
                 
-                Text("\(rankingSystem.gamerPoints) RP")
+                Text("\(gamerList.gamerPoints) RP")
                     .font(.headline)
                     .foregroundColor(Color("fadeGreen"))
             }
@@ -64,4 +55,12 @@ struct RankingSystemView: View {
     }
     
     
+}
+
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
