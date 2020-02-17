@@ -39,6 +39,10 @@ struct GamerProfileView: View {
                 .fontWeight(.medium)
                 .foregroundColor(Color("fadeGreen"))
             
+            Text("Games Owned")
+                .font(.body)
+                .fontWeight(.medium)
+            
             ScrollView(.horizontal) {
                 HStack(spacing: 20) {
                     

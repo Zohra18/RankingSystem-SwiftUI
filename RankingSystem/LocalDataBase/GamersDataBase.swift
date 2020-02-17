@@ -9,7 +9,7 @@
 import Foundation
 
 var rankingSystem: [Gamer] = [
-    Gamer(gamerName: "x666EdgeLord666x", pictureName: "edgelord", gamerRank: 3, gamerPoints: 667, gameList: gameListEdgeLord),
+    Gamer(gamerName: "EdgeLord", pictureName: "edgelord", gamerRank: 3, gamerPoints: 667, gameList: gameListEdgeLord),
     
     Gamer(gamerName: "gamerGrill", pictureName: "grill", gamerRank: 2, gamerPoints: 789, gameList: gameListGamerGrill),
     
