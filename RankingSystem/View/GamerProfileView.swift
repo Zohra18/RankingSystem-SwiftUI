@@ -14,7 +14,7 @@ struct GamerProfileView: View {
     
     var body: some View {
         
-//        NavigationView {
+        //        NavigationView {
         VStack(spacing: 20) {
             // Main part of the profile
             
@@ -33,7 +33,7 @@ struct GamerProfileView: View {
             Text("Rank: \(gamer.gamerRank)")
                 .font(.title)
                 .fontWeight(.medium)
-                .foregroundColor(Color("mainGreen"))
+                //                .foregroundColor(Color("mainGreen"))
                 .padding(.bottom, -15)
             
             
@@ -58,28 +58,28 @@ struct GamerProfileView: View {
                     // Have to go inside of the gamer.gameList in order to get the info from our array of games
                     ForEach(gamer.gameList) { ownedGames in
                         
-                            NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
-                                VStack {
-                                    
-                                    Image(ownedGames.gameImage)
-                                        .resizable()
-                                        .frame(width: 120, height: 120)
-                                    
-                                    Text("\(ownedGames.gameName)")
-                                        .font(.body)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(Color("mainGreen"))
-                                    
-                                    Text("\(ownedGames.completionPercent)%")
-                                        .font(.footnote)
-                                        .foregroundColor(Color("fadeGreen"))
-                                    
-                                    
-                                }
-                                    // Setting the frame to the same size for each games
-                                    .frame(width: 160, height: 160, alignment: .center)
+                        NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
+                            
+                            VStack {
+                                Image(ownedGames.gameImage)
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                
+                                Text("\(ownedGames.gameName)")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color("mainGreen"))
+                                
+                                Text("\(ownedGames.completionPercent)%")
+                                    .font(.footnote)
+                                    .foregroundColor(Color("fadeGreen"))
+                                
                                 
                             }
+                                // Setting the frame to the same size for each games
+                                .frame(width: 160, height: 160, alignment: .center)
+                            
+                        }
                         
                         
                     } // end of the ForEach
@@ -91,7 +91,7 @@ struct GamerProfileView: View {
             .navigationBarTitle("Profile", displayMode: .inline)
         
         
-//        }
+        //        }
     }// end of the body
 }// end of the view
 
@@ -102,12 +102,41 @@ struct GamerProfileView_Previews: PreviewProvider {
     }
 }
 
-//struct gameList {
+//struct gameList: View {
 //
 //    var gamer : Gamer
 //
 //    var body: some View {
 //
+//
+//        ForEach(gamer.gameList) { ownedGames in
+//
+////                NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
+//
+//                    VStack {
+//
+//                        Image(ownedGames.gameImage)
+//                            .resizable()
+//                            .frame(width: 120, height: 120)
+//
+//                        Text("\(ownedGames.gameName)")
+//                            .font(.body)
+//                            .fontWeight(.medium)
+//                            .foregroundColor(Color("mainGreen"))
+//
+//                        Text("\(ownedGames.completionPercent)%")
+//                            .font(.footnote)
+//                            .foregroundColor(Color("fadeGreen"))
+//
+//
+//                    }
+//                        // Setting the frame to the same size for each games
+//                        .frame(width: 160, height: 160, alignment: .center)
+//
+////                }
+//
+//
+//        } // end of the ForEach
 //    }
 //
 //}

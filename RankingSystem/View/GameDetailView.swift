@@ -11,20 +11,18 @@ import SwiftUI
 struct GameDetailView: View {
     
     var ownedGamesDetail : Game
-    
+
     var body: some View {
         
         VStack(spacing: 20) {
             
-//            Image(ownedGamesDetail.gameImage)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 360, height: 360)
-            
-            Text("this is a test")
-            
+            Image(ownedGamesDetail.gameImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 360, height: 360)
+            Spacer()
         }
-//        .navigationBarTitle("\(ownedGamesDetail.gameName)", displayMode: .inline)
+        .navigationBarTitle("\(ownedGamesDetail.gameName)", displayMode: .inline)
     }
 }
 
