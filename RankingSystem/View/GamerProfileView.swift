@@ -52,7 +52,7 @@ struct GamerProfileView: View {
             // List of games the user ownes and plays
             ScrollView(.horizontal, showsIndicators: false) {
                 // Horizontal List (old CollectionView)
-                HStack(spacing: 20) {
+                HStack(spacing: 0) {
                     
                     // Have to go inside of the gamer.gameList in order to get the info from our array of games
                     ForEach(gamer.gameList) { ownedGames in
