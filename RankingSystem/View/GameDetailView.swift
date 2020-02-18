@@ -11,6 +11,7 @@ import SwiftUI
 struct GameDetailView: View {
     
     var ownedGamesDetail : Game
+//    var gamer : Gamer
 
     var body: some View {
         
@@ -20,6 +21,8 @@ struct GameDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 360, height: 360)
+                .padding(20)
+            
             Spacer()
         }
         .navigationBarTitle("\(ownedGamesDetail.gameName)", displayMode: .inline)

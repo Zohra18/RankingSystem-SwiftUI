@@ -57,31 +57,27 @@ struct GamerProfileView: View {
                     
                     // Have to go inside of the gamer.gameList in order to get the info from our array of games
                     ForEach(gamer.gameList) { ownedGames in
-                        
-                        NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
-                            
+                   
+                    NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
+//                            GameListView(gamer: gamer)
                             VStack {
                                 Image(ownedGames.gameImage)
                                     .resizable()
                                     .frame(width: 120, height: 120)
-                                
+                                    .foregroundColor(.none)
+
                                 Text("\(ownedGames.gameName)")
                                     .font(.body)
                                     .fontWeight(.medium)
                                     .foregroundColor(Color("mainGreen"))
-                                
+
                                 Text("\(ownedGames.completionPercent)%")
                                     .font(.footnote)
                                     .foregroundColor(Color("fadeGreen"))
-                                
-                                
                             }
                                 // Setting the frame to the same size for each games
                                 .frame(width: 160, height: 160, alignment: .center)
-                            
-                        }
-                        
-                        
+                        }// end of NavLink
                     } // end of the ForEach
                 }// end of HStack
             }// end of scrollView
@@ -102,7 +98,7 @@ struct GamerProfileView_Previews: PreviewProvider {
     }
 }
 
-//struct gameList: View {
+//struct GameListView: View {
 //
 //    var gamer : Gamer
 //
