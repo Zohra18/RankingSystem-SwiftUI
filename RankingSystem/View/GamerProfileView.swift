@@ -51,7 +51,6 @@ struct GamerProfileView: View {
             
             // List of games the user ownes and plays
             ScrollView(.horizontal, showsIndicators: false) {
-                
                 // Horizontal List (old CollectionView)
                 HStack(spacing: 20) {
                     
@@ -64,12 +63,11 @@ struct GamerProfileView: View {
                                 Image(ownedGames.gameImage)
                                     .resizable()
                                     .frame(width: 120, height: 120)
-                                    .foregroundColor(.none)
 
                                 Text("\(ownedGames.gameName)")
                                     .font(.body)
                                     .fontWeight(.medium)
-                                    .foregroundColor(Color("mainGreen"))
+                                    .foregroundColor(.primary)
 
                                 Text("\(ownedGames.completionPercent)%")
                                     .font(.footnote)
@@ -78,9 +76,10 @@ struct GamerProfileView: View {
                                 // Setting the frame to the same size for each games
                                 .frame(width: 160, height: 160, alignment: .center)
                         }// end of NavLink
+                        .buttonStyle(PlainButtonStyle())
                     } // end of the ForEach
                 }// end of HStack
-            }// end of scrollView
+            }// end of ScrollView
             
         }// end of the big VStack which is our profile
             .padding(30)
