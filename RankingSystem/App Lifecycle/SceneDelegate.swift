@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    var user: Gamer? = Gamer(gamerName: "test", pictureName: "test", gamerRank: 0, gamerPoints: 0, gameList: [Game]())
+    var user: Gamer? = Gamer(gamerName: "MintTea", pictureName: "kb", gamerRank: 18, gamerPoints: 348, gameList: gameListGamerGrill)
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

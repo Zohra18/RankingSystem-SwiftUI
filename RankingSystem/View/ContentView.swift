@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selectedTab) {
-
+            
             // firstTab
             NavigationView {
                 List(rankingSystem) { gamer in
@@ -29,28 +29,36 @@ struct ContentView: View {
                 }.navigationBarTitle("Ranking")
             }
             .tabItem {
-                Image(systemName: "phone.fill")
+                Image(systemName: "list.number")
                 Text("Ranking")
             }.tag(0)
-
+            
             // secondTab
-            UserProfileView(user: user)
-                .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Profile")
+            NavigationView {
+                ForEach(user.gameList) { userGames in
+                    NavigationLink(destination: GameDetailView(ownedGamesDetail: userGames)) {
+                        UserProfileView(user: self.user)
+                    }
+                }
+            }
+                
+            .tabItem {
+                Image(systemName: "person")
+                Text("Profile")
             }.tag(1)
         }
+        .accentColor(Color("toxicGreen"))
         
-//                NavigationView {
-//                    List(rankingSystem) { gamer in
-//                        NavigationLink(destination:
-//                        GamerProfileView(gamer: gamer)) {
-//                            RankingSystemView(gamerList: gamer)
-//                        }
-//                    }
-//                    .navigationBarTitle("Ranking")
-//
-//                }
+        //                NavigationView {
+        //                    List(rankingSystem) { gamer in
+        //                        NavigationLink(destination:
+        //                        GamerProfileView(gamer: gamer)) {
+        //                            RankingSystemView(gamerList: gamer)
+        //                        }
+        //                    }
+        //                    .navigationBarTitle("Ranking")
+        //
+        //                }
         
     }
     
