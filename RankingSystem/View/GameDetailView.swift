@@ -15,7 +15,7 @@ struct GameDetailView: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color("fadeGreen"), .orange]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [ .black, Color("fadeGreen")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.bottom)
             
             VStack(spacing: 20) {

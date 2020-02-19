@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selectedTab) {
-            
+
             // firstTab
             NavigationView {
                 List(rankingSystem) { gamer in
@@ -32,7 +32,7 @@ struct ContentView: View {
                 Image(systemName: "phone.fill")
                 Text("Ranking")
             }.tag(0)
-            
+
             // secondTab
             UserProfileView(user: user)
                 .tabItem {
@@ -41,16 +41,16 @@ struct ContentView: View {
             }.tag(1)
         }
         
-        //        NavigationView {
-        //            List(rankingSystem) { gamer in
-        //                NavigationLink(destination:
-        //                GamerProfileView(gamer: gamer)) {
-        //                    RankingSystemView(gamerList: gamer)
-        //                }
-        //            }
-        //            .navigationBarTitle("Ranking")
-        //
-        //        }
+//                NavigationView {
+//                    List(rankingSystem) { gamer in
+//                        NavigationLink(destination:
+//                        GamerProfileView(gamer: gamer)) {
+//                            RankingSystemView(gamerList: gamer)
+//                        }
+//                    }
+//                    .navigationBarTitle("Ranking")
+//
+//                }
         
     }
     
