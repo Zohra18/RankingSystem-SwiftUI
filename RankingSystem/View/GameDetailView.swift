@@ -25,6 +25,7 @@ struct GameDetailView: View {
                     .frame(width: 360, height: 360)
                     .padding(20)
                 
+                    
                 Spacer()
             }
             .navigationBarTitle("\(ownedGamesDetail.gameName)", displayMode: .inline)

@@ -10,19 +10,37 @@ import SwiftUI
 
 struct UserProfileView: View {
     
+    @State var alreadyLoggedIn = false
+    
     var user : Gamer
     
+    @State private var showAlert = true
+    
     var body: some View {
-        ScrollView {
+//        ScrollView {
             GamerProfileView(gamer: user)
-                .navigationBarTitle("Profile")
+                .navigationBarTitle("Profile", displayMode: .inline)
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Connexion Required"), message: Text("Welcome back, please log in"), dismissButton: .default(Text("Got it")))
         }
+//            Text("test")
+//        }
         
     }
 }
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView(user: Gamer(gamerName: "gamerGrill", pictureName: "grill", gamerRank: 2, gamerPoints: 789, gameList: gameListGamerGrill))
+        UserProfileView(user: Gamer(gamerName: "MintTea", pictureName: "kb", gamerRank: 18, gamerPoints: 348, gameList: gameListGamerGrill))
     }
 }
+
+//struct ConnexionAlertView {
+//
+//    @State private var showAlert = false
+//
+//    var body: some View {
+//
+//
+//    }
+//}

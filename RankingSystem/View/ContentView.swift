@@ -13,6 +13,8 @@ struct ContentView: View {
     
     var user: Gamer
     
+// Need a State in order to know which tabItem is selected
+    
     @State var selectedTab = 0
     
     var body: some View {
@@ -68,10 +70,11 @@ struct TabSystemView: View {
                     }
                 }
                 .navigationBarTitle("Ranking")
+                .padding(.top, 10)
             }
             .tabItem {
                 Image(systemName: "list.number")
-                Text("Ranking")
+                Text("Leaderboard")
             }
             .tag(0)
             
