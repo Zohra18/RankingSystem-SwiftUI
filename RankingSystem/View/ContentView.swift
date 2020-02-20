@@ -16,37 +16,8 @@ struct ContentView: View {
     @State var selectedTab = 0
     
     var body: some View {
-        
-        TabView(selection: $selectedTab) {
-            
-            // firstTab
-            NavigationView {
-                List(rankingSystem) { gamer in
-                    NavigationLink(destination:
-                    GamerProfileView(gamer: gamer)) {
-                        RankingSystemView(gamerList: gamer)
-                    }
-                }.navigationBarTitle("Ranking")
-            }
-            .tabItem {
-                Image(systemName: "list.number")
-                Text("Ranking")
-            }.tag(0)
-            
-            // secondTab
-            NavigationView {
-                UserProfileView(user: self.user)
-                    .navigationBarTitle("Profile", displayMode: .inline)
-            }
-            .tabItem {
-                Image(systemName: "person")
-                Text("Profile")
-            }.tag(1)
-        }
-        .accentColor(Color("toxicGreen"))
-        
+        TabSystemView(user: user, selectedTab: selectedTab)
     }
-    
 }
 
 
@@ -74,10 +45,52 @@ struct RankingSystemView: View {
             }
         }
     }
-    
-    
 }
 
+// Set up for the TabView
+struct TabSystemView: View {
+    
+    var user: Gamer
+    
+// Need a State in order to know which tabItem is selected
+    @State var selectedTab = 0
+    
+    var body: some View {
+        
+        TabView(selection: $selectedTab) {
+            
+            // firstTab
+            NavigationView {
+                List(rankingSystem) { gamer in
+                    NavigationLink(destination:
+                    GamerProfileView(gamer: gamer)) {
+                        RankingSystemView(gamerList: gamer)
+                    }
+                }
+                .navigationBarTitle("Ranking")
+            }
+            .tabItem {
+                Image(systemName: "list.number")
+                Text("Ranking")
+            }
+            .tag(0)
+            
+            // secondTab
+            NavigationView {
+                UserProfileView(user: self.user)
+                    .navigationBarTitle("Profile", displayMode: .inline)
+            }
+            .tabItem {
+                Image(systemName: "person")
+                Text("Profile")
+            }
+            .tag(1)
+        }
+        .accentColor(Color("toxicGreen"))
+        .edgesIgnoringSafeArea(.top)
+        
+    }
+}
 
 
 struct ContentView_Previews: PreviewProvider {

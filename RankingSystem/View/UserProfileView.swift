@@ -13,8 +13,11 @@ struct UserProfileView: View {
     var user : Gamer
     
     var body: some View {
-        GamerProfileView(gamer: user)
-            .navigationBarTitle("Profile")
+        ScrollView {
+            GamerProfileView(gamer: user)
+                .navigationBarTitle("Profile")
+        }
+        
     }
 }
 
