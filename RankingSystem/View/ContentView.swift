@@ -35,30 +35,15 @@ struct ContentView: View {
             
             // secondTab
             NavigationView {
-                ForEach(user.gameList) { userGames in
-                    NavigationLink(destination: GameDetailView(ownedGamesDetail: userGames)) {
-                        UserProfileView(user: self.user)
-                    }
-                }
+                UserProfileView(user: self.user)
+                    .navigationBarTitle("Profile", displayMode: .inline)
             }
-                
             .tabItem {
                 Image(systemName: "person")
                 Text("Profile")
             }.tag(1)
         }
         .accentColor(Color("toxicGreen"))
-        
-        //                NavigationView {
-        //                    List(rankingSystem) { gamer in
-        //                        NavigationLink(destination:
-        //                        GamerProfileView(gamer: gamer)) {
-        //                            RankingSystemView(gamerList: gamer)
-        //                        }
-        //                    }
-        //                    .navigationBarTitle("Ranking")
-        //
-        //                }
         
     }
     
@@ -82,7 +67,6 @@ struct RankingSystemView: View {
             VStack(alignment: .leading) {
                 Text(gamerList.gamerName)
                     .font(.title)
-                //                    .foregroundColor(Color("mainGreen"))
                 
                 Text("\(gamerList.gamerPoints) RP")
                     .font(.headline)
@@ -99,5 +83,6 @@ struct RankingSystemView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(user: Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927, gameList: gameListNostalgia))
+            .environment(\.colorScheme, .dark)
     }
 }

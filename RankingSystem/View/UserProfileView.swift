@@ -14,9 +14,7 @@ struct UserProfileView: View {
     
     var body: some View {
         GamerProfileView(gamer: user)
-    .navigationBarTitle("Profile")
-        
-        
+            .navigationBarTitle("Profile")
     }
 }
 
