@@ -10,11 +10,9 @@ import SwiftUI
 
 struct UserProfileView: View {
     
-    @State var alreadyLoggedIn = false
+    @State private var showAlert: Bool = false
     
     var user : Gamer
-    
-    @State private var showAlert = true
     
     var body: some View {
 //        ScrollView {
@@ -31,7 +29,7 @@ struct UserProfileView: View {
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView(user: Gamer(gamerName: "MintTea", pictureName: "kb", gamerRank: 18, gamerPoints: 348, gameList: gameListGamerGrill))
+        UserProfileView(user: Gamer(gamerName: "MintTea", pictureName: "kb", gamerRank: 18, gamerPoints: 0, gameList: userGameList))
     }
 }
 

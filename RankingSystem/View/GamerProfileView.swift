@@ -14,7 +14,6 @@ struct GamerProfileView: View {
     
     var body: some View {
         
-        //        NavigationView {
         VStack(spacing: 20) {
             // Main part of the profile
             
@@ -49,46 +48,56 @@ struct GamerProfileView: View {
                 .fontWeight(.medium)
                 .padding(.leading, -180)
             
-            // List of games the user ownes and plays
-            ScrollView(.horizontal, showsIndicators: false) {
-                // Horizontal List (old CollectionView)
-                HStack(spacing: 0) {
-                    
-                    // Have to go inside of the gamer.gameList in order to get the info from our array of games
-                    ForEach(gamer.gameList) { ownedGames in
-                   
-                    NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
-//                            GameListView(gamer: gamer)
-                            VStack {
-                                Image(ownedGames.gameImage)
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-
-                                Text("\(ownedGames.gameName)")
-                                    .font(.body)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(.primary)
-
-                                Text("\(ownedGames.completionPercent)%")
-                                    .font(.footnote)
-                                    .foregroundColor(Color("fadeGreen"))
-                            }
-                                // Setting the frame to the same size for each games
-                                .frame(width: 160, height: 160, alignment: .center)
-                        }// end of NavLink
-                        .buttonStyle(PlainButtonStyle())
-                    } // end of the ForEach
-                }// end of HStack
-            }// end of ScrollView
+//          Game list horizontal scroll
+            GameListScrollView(gamer: gamer)
             
         }// end of the big VStack which is our profile
             .padding(30)
             .navigationBarTitle("Profile", displayMode: .inline)
-        
-        
-        //        }
     }// end of the body
 }// end of the view
+
+
+// Set aside the horizontal scrollable game list
+struct GameListScrollView: View {
+    
+    var gamer: Gamer
+    
+    var body: some View {
+        // List of games the user ownes and plays
+        ScrollView(.horizontal, showsIndicators: false) {
+            // Horizontal List (old CollectionView)
+            HStack(spacing: 0) {
+                
+                // Have to go inside of the gamer.gameList in order to get the info from our array of games
+                ForEach(gamer.gameList) { ownedGames in
+               
+                NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
+                    
+                        VStack {
+                            Image(ownedGames.gameImage)
+                                .resizable()
+                                .frame(width: 120, height: 120)
+
+                            Text("\(ownedGames.gameName)")
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.primary)
+
+                            Text("\(ownedGames.completionPercent)%")
+                                .font(.footnote)
+                                .foregroundColor(Color("fadeGreen"))
+                        }
+                            // Setting the frame to the same size for each games
+                            .frame(width: 160, height: 160, alignment: .center)
+                    }// end of NavLink
+                    .buttonStyle(PlainButtonStyle())
+                } // end of the ForEach
+            }// end of HStack
+        }// end of ScrollView
+    }
+}
+
 
 struct GamerProfileView_Previews: PreviewProvider {
     static var previews: some View {
@@ -96,42 +105,3 @@ struct GamerProfileView_Previews: PreviewProvider {
         GamerProfileView(gamer: Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927, gameList: gameListNostalgia))
     }
 }
-
-//struct GameListView: View {
-//
-//    var gamer : Gamer
-//
-//    var body: some View {
-//
-//
-//        ForEach(gamer.gameList) { ownedGames in
-//
-////                NavigationLink(destination: GameDetailView(ownedGamesDetail: ownedGames)) {
-//
-//                    VStack {
-//
-//                        Image(ownedGames.gameImage)
-//                            .resizable()
-//                            .frame(width: 120, height: 120)
-//
-//                        Text("\(ownedGames.gameName)")
-//                            .font(.body)
-//                            .fontWeight(.medium)
-//                            .foregroundColor(Color("mainGreen"))
-//
-//                        Text("\(ownedGames.completionPercent)%")
-//                            .font(.footnote)
-//                            .foregroundColor(Color("fadeGreen"))
-//
-//
-//                    }
-//                        // Setting the frame to the same size for each games
-//                        .frame(width: 160, height: 160, alignment: .center)
-//
-////                }
-//
-//
-//        } // end of the ForEach
-//    }
-//
-//}

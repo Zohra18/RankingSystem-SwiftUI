@@ -29,3 +29,5 @@ var gameListGamerGrill: [Game] = [
     Game(gameName: "Life is Strange", gameImage: "lis", releaseYear: 2015, gameGenre: [GameGenre.Adventure, GameGenre.StoryRich], completionPercent: 89)
     ]
 
+var userGameList: [Game] = []
+

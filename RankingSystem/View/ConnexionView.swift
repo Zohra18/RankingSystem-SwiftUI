@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ConnexionView: View {
     
+    @Binding var showAlert: Bool
+    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var email: String = ""
@@ -59,6 +61,6 @@ struct ConnexionView: View {
 
 struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnexionView()
+        ConnexionView(showAlert: .constant(true))
     }
 }
