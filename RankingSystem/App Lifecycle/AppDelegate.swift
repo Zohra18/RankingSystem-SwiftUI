@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().tintColor = UIColor(named: "toxicGreen")
         UINavigationBar.appearance().backgroundColor = UIColor(named: "mainGreen")
-        UITabBar.appearance().backgroundColor = UIColor(named: "fadeGreen")
+        UITabBar.appearance().backgroundColor = UIColor(named: "mainGreen")
         return true
     }
     
