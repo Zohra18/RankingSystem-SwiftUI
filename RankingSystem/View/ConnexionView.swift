@@ -19,42 +19,71 @@ struct ConnexionView: View {
     var body: some View {
         
         VStack {
-            Text("Welcome")
+            Capsule()
+            .frame(width: 70, height: 5, alignment: .center)
+            .padding(.top, 10)
+            .foregroundColor(Color("mainGreen"))
+            
+            Text("Rank Up")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(20)
             
-// Already have an account
-            Form {
-                Section {
-                    Text("Already have an account?")
-                        .padding(.leading, 25)
-                    TextField("Username", text: $username)
-                        .font(.headline)
-                    TextField("Email", text: $password)
-                        .font(.headline)
-                }
-                .padding(10)
-                .font(.title)
-                
-// Signing in
-                Section {
-                    Text("Sign in")
-                        .padding(.leading, 135)
-                    TextField("Username", text: $username)
-                        .font(.headline)
-                    TextField("Password", text: $password)
-                        .font(.headline)
-                    TextField("Email", text: $email)
-                        .font(.headline)
-                }
-                .padding(10)
-                .font(.title)
-            }
+            // Already have an account
+//            Form {
+//                Section(header: Text("Already have an account?")) {
+////                    Text("Already have an account?")
+////                        .font(.headline)
+////                        .frame(width: 385, height: 30, alignment: .center)
+////                        .foregroundColor(Color("fadeGreen"))
+//                    TextField("Username", text: $username)
+//                        .font(.body)
+//                    TextField("Email", text: $password)
+//                        .font(.body)
+//                }
+//
+//                // Signing in
+//                Section {
+//                    Text("Sign in")
+//                        .font(.headline)
+//                        .frame(width: 385, height: 30, alignment: .center)
+////                        .foregroundColor(Color("fadeGreen"))
+//                    TextField("Username", text: $username)
+//                        .font(.body)
+//                    TextField("Password", text: $password)
+//                        .font(.body)
+//                    TextField("Email", text: $email)
+//                        .font(.body)
+//                }
+//            }
             
-//            Button(action: <#T##() -> Void#>, label: <#T##() -> PrimitiveButtonStyleConfiguration.Label#>)
+            VStack {
+                Text("Already have an account?")
+                
+                TextField("Username", text: $username)
+//                    .font(.body)
+                    .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color("mainGreen"))
+                
+                TextField("Password", text: $password)
+//                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                
+            }.frame(width: 380, alignment: .center)
+            
             Spacer()
-        }
+            
+            Button(action: {
+                self.showAlert.toggle()
+            }, label: {
+                Text("Validate")
+                .foregroundColor(Color("toxicGreen"))
+            })
+            
+            
+        }.frame(width: 414)
         
     }
 }

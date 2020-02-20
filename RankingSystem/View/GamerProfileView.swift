@@ -52,7 +52,7 @@ struct GamerProfileView: View {
             GameListScrollView(gamer: gamer)
             
         }// end of the big VStack which is our profile
-            .padding(30)
+//            .padding(30)
             .navigationBarTitle("Profile", displayMode: .inline)
     }// end of the body
 }// end of the view
@@ -95,6 +95,7 @@ struct GameListScrollView: View {
                 } // end of the ForEach
             }// end of HStack
         }// end of ScrollView
+            .padding(.leading, 10)
     }
 }
 

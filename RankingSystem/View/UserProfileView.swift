@@ -10,19 +10,23 @@ import SwiftUI
 
 struct UserProfileView: View {
     
-    @State private var showAlert: Bool = false
+    @State private var showAlert: Bool = true
     
     var user : Gamer
     
     var body: some View {
-//        ScrollView {
-            GamerProfileView(gamer: user)
-                .navigationBarTitle("Profile", displayMode: .inline)
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Connexion Required"), message: Text("Welcome back, please log in"), dismissButton: .default(Text("Got it")))
+        //        ScrollView {
+        GamerProfileView(gamer: user)
+            .navigationBarTitle("Profile", displayMode: .inline)
+            .sheet(isPresented: $showAlert) {
+                ConnexionView(showAlert: self.$showAlert)
         }
-//            Text("test")
-//        }
+        
+        //                .alert(isPresented: $showAlert) {
+        //                    Alert(title: Text("Connexion Required"), message: Text("Welcome back, please log in"), dismissButton: .default(Text("Got it")))
+        //        }
+        //            Text("test")
+        //        }
         
     }
 }

@@ -69,8 +69,7 @@ struct TabSystemView: View {
                         RankingSystemView(gamerList: gamer)
                     }
                 }
-                .navigationBarTitle("Ranking")
-                .padding(.top, 10)
+                .navigationBarTitle("Leaderboard")
             }
             .tabItem {
                 Image(systemName: "list.number")
