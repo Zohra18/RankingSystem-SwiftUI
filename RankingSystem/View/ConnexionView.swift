@@ -20,57 +20,44 @@ struct ConnexionView: View {
         
         VStack {
             Capsule()
-            .frame(width: 70, height: 5, alignment: .center)
-            .padding(.top, 10)
-            .foregroundColor(Color("mainGreen"))
+                .frame(width: 70, height: 5, alignment: .center)
+                .padding(.top, 10)
+                .foregroundColor(Color("mainGreen"))
             
             Text("Rank Up")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(20)
+                .padding(.bottom, 20)
             
-            // Already have an account
-//            Form {
-//                Section(header: Text("Already have an account?")) {
-////                    Text("Already have an account?")
-////                        .font(.headline)
-////                        .frame(width: 385, height: 30, alignment: .center)
-////                        .foregroundColor(Color("fadeGreen"))
-//                    TextField("Username", text: $username)
-//                        .font(.body)
-//                    TextField("Email", text: $password)
-//                        .font(.body)
-//                }
-//
-//                // Signing in
-//                Section {
-//                    Text("Sign in")
-//                        .font(.headline)
-//                        .frame(width: 385, height: 30, alignment: .center)
-////                        .foregroundColor(Color("fadeGreen"))
-//                    TextField("Username", text: $username)
-//                        .font(.body)
-//                    TextField("Password", text: $password)
-//                        .font(.body)
-//                    TextField("Email", text: $email)
-//                        .font(.body)
-//                }
-//            }
-            
-            VStack {
+            // Account already existing
+            VStack(spacing: 30) {
                 Text("Already have an account?")
                 
+                
                 TextField("Username", text: $username)
-//                    .font(.body)
-                    .padding(.bottom, 10)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(Color("mainGreen"))
                 
                 TextField("Password", text: $password)
-//                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }.frame(width: 380, alignment: .center)
+            
+            Spacer()
+            
+            VStack(spacing: 30) {
+                Text("Sign in")
                 
+                
+                TextField("Username", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(Color("mainGreen"))
+                
+                TextField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             }.frame(width: 380, alignment: .center)
             
             Spacer()
@@ -79,9 +66,10 @@ struct ConnexionView: View {
                 self.showAlert.toggle()
             }, label: {
                 Text("Validate")
-                .foregroundColor(Color("toxicGreen"))
+                    .foregroundColor(Color("toxicGreen"))
             })
             
+            Spacer()
             
         }.frame(width: 414)
         
