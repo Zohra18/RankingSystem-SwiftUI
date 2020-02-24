@@ -14,7 +14,7 @@ struct GamerProfileView: View {
     
     var body: some View {
         
-        VStack(spacing: 20) {
+        VStack(spacing: 10) {
             // Main part of the profile
             
             Text(gamer.gamerName)
@@ -33,7 +33,7 @@ struct GamerProfileView: View {
                 .font(.title)
                 .fontWeight(.medium)
                 //                .foregroundColor(Color("mainGreen"))
-                .padding(.bottom, -15)
+                .padding(.bottom, -10)
             
             
             Text("\(gamer.gamerPoints) points")
