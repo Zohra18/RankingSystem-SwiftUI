@@ -53,6 +53,7 @@ struct ConnexionView: View {
                 TextField("Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(Color("mainGreen"))
+                    .keyboardType(.numbersAndPunctuation)
                 
                 TextField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())

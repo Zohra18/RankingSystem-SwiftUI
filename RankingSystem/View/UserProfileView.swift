@@ -20,6 +20,7 @@ struct UserProfileView: View {
             .navigationBarTitle("Profile", displayMode: .inline)
             .sheet(isPresented: $showAlert) {
                 ConnexionView(showAlert: self.$showAlert)
+                
         }
         
         //                .alert(isPresented: $showAlert) {
@@ -36,13 +37,3 @@ struct UserProfileView_Previews: PreviewProvider {
         UserProfileView(user: Gamer(gamerName: "MintTea", pictureName: "kb", gamerRank: 18, gamerPoints: 0, gameList: userGameList))
     }
 }
-
-//struct ConnexionAlertView {
-//
-//    @State private var showAlert = false
-//
-//    var body: some View {
-//
-//
-//    }
-//}

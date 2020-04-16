@@ -16,3 +16,5 @@ struct Gamer: Identifiable {
     var gamerPoints: Int
     var gameList: [Game]
 }
+
+
