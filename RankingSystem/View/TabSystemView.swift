@@ -13,12 +13,9 @@ struct TabSystemView: View {
     
     var user: Gamer
     
-// Need a State in order to know which tabItem is selected
-    @State var selectedTab = 0
-    
     var body: some View {
         
-        TabView(selection: $selectedTab) {
+        TabView() {
             
             // firstTab
             NavigationView {
@@ -34,7 +31,7 @@ struct TabSystemView: View {
                 Image(systemName: "list.number")
                 Text("Leaderboard")
             }
-            .tag(0)
+            
             
             // secondTab
             NavigationView {
@@ -45,7 +42,7 @@ struct TabSystemView: View {
                 Image(systemName: "person")
                 Text("Profile")
             }
-            .tag(1)
+            
         }
         .accentColor(Color("toxicGreen"))
         .edgesIgnoringSafeArea(.top)

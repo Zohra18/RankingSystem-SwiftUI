@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// This view is the connexion to the profile
 struct ConnexionView: View {
     
     @Binding var showAlert: Bool
@@ -74,29 +75,30 @@ struct ConnexionView: View {
             Spacer()
             
         }.frame(width: 414)
+        
 //            Testing moving keyboard on textField click
-            .offset(y: -self.value)
-            .animation(.spring())
-            .onAppear {
-                
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) {
-                    ( notification ) in
-                    
-                    let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-                    let height = value.height
-                    
-                    self.value = height
-                }
-                
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) {
-                    ( notification ) in
-                    
-                    self.value = 0
-                }
-                
-                
-                
-        }
+//            .offset(y: -self.value)
+//            .animation(.spring())
+//            .onAppear {
+//
+//                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) {
+//                    ( notification ) in
+//
+//                    let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+//                    let height = value.height
+//
+//                    self.value = height
+//                }
+//
+//                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) {
+//                    ( notification ) in
+//
+//                    self.value = 0
+//                }
+//
+//
+//
+//        }
         
         
         

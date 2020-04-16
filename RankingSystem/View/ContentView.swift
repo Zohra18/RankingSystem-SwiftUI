@@ -11,14 +11,12 @@ import SwiftUI
 // set up of the main view
 struct ContentView: View {
     
+    @EnvironmentObject var isLoggedIn: UserSettings
+    
     var user: Gamer
     
-// Need a State in order to know which tabItem is selected
-    
-    @State var selectedTab = 0
-    
     var body: some View {
-        TabSystemView(user: user, selectedTab: selectedTab)
+        TabSystemView(user: user)
     }
 }
 

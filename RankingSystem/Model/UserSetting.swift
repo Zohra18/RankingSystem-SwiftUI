@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+class UserSettings: ObservableObject {
+    
+    @Published var isLoggedIn = false
+    
+}

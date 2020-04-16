@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+
+// This is the profile of the Logged in user
 struct UserProfileView: View {
     
     @State private var showAlert: Bool = true
@@ -15,7 +17,7 @@ struct UserProfileView: View {
     var user : Gamer
     
     var body: some View {
-        //        ScrollView {
+                ScrollView {
         GamerProfileView(gamer: user)
             .navigationBarTitle("Profile", displayMode: .inline)
             .sheet(isPresented: $showAlert) {
@@ -27,7 +29,7 @@ struct UserProfileView: View {
         //                    Alert(title: Text("Connexion Required"), message: Text("Welcome back, please log in"), dismissButton: .default(Text("Got it")))
         //        }
         //            Text("test")
-        //        }
+                }
         
     }
 }

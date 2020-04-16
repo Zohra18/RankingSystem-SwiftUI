@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+
+// This view is the detailView of the games owned by the user/gamers
 struct GameDetailView: View {
     
     var ownedGamesDetail : Game

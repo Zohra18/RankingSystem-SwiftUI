@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// This is the horizontal list of games inside the gamer profile
 // Set aside the horizontal scrollable game list
 struct GameListScrollView: View {
     
