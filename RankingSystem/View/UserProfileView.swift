@@ -12,24 +12,20 @@ import SwiftUI
 // This is the profile of the Logged in user
 struct UserProfileView: View {
     
-    @State private var showAlert: Bool = true
+//    @State private var showAlert: Bool = true
+    @EnvironmentObject var userSettings: UserSettings
     
     var user : Gamer
     
     var body: some View {
-                ScrollView {
-        GamerProfileView(gamer: user)
-            .navigationBarTitle("Profile", displayMode: .inline)
-            .sheet(isPresented: $showAlert) {
-                ConnexionView(showAlert: self.$showAlert)
-                
+        ScrollView {
+            GamerProfileView(gamer: user)
+                .navigationBarTitle("Profile", displayMode: .inline)
+                .sheet(isPresented: $userSettings.notLoggedIn) {
+                    ConnexionView(showAlert: self.$userSettings.notLoggedIn)
+                    
+            }
         }
-        
-        //                .alert(isPresented: $showAlert) {
-        //                    Alert(title: Text("Connexion Required"), message: Text("Welcome back, please log in"), dismissButton: .default(Text("Got it")))
-        //        }
-        //            Text("test")
-                }
         
     }
 }

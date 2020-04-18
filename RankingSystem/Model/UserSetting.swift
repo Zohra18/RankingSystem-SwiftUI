@@ -11,6 +11,6 @@ import SwiftUI
 
 class UserSettings: ObservableObject {
     
-    @Published var isLoggedIn = false
+    @Published var notLoggedIn = true
     
 }

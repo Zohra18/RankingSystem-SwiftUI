@@ -13,7 +13,6 @@ struct ContentView: View {
     
     @EnvironmentObject var isLoggedIn: UserSettings
     
-//    var user: Gamer
     var user = Gamer(gamerName: "", pictureName: "", gamerRank: 0, gamerPoints: 0, gameList: userGameList)
     
     var body: some View {
