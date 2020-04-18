@@ -9,5 +9,7 @@
 import Foundation
 
 class GameList: ObservableObject {
+    
     @Published var allGames : [Game] = []
+    
 }

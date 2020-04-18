@@ -11,7 +11,7 @@ import SwiftUI
 // Set up for the TabView
 struct TabSystemView: View {
     
-    var user: Gamer
+    @State var user: Gamer
     
     var body: some View {
         
@@ -45,7 +45,6 @@ struct TabSystemView: View {
             
         }
         .accentColor(Color("toxicGreen"))
-        .edgesIgnoringSafeArea(.top)
         
     }
 }

@@ -13,7 +13,8 @@ struct ContentView: View {
     
     @EnvironmentObject var isLoggedIn: UserSettings
     
-    var user: Gamer
+//    var user: Gamer
+    var user = Gamer(gamerName: "", pictureName: "", gamerRank: 0, gamerPoints: 0, gameList: userGameList)
     
     var body: some View {
         TabSystemView(user: user)
@@ -23,7 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(user: Gamer(gamerName: "Nostalgia", pictureName: "gameBOY", gamerRank: 1, gamerPoints: 927, gameList: gameListNostalgia))
-            .environment(\.colorScheme, .dark)
+        ContentView()
     }
 }
