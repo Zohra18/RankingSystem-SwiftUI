@@ -55,6 +55,6 @@ struct TabSystemView: View {
 
 struct TabSystemView_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        TabSystemView(user: Gamer(gamerName: "toto", pictureName: "", gamerRank: 2, gamerPoints: 344, gameList: [Game]()))
     }
 }

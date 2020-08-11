@@ -23,7 +23,7 @@ struct ContentView: View {
     
      var body: some View {
            ZStack {
-            TabSystemView()
+            TabSystemView(user: user)
                 .zIndex(switchView ? 10 : 0)
             Color(switchView ? .clear : .white)
 //                .zIndex(switchView ? 0 : 1)
