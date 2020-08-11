@@ -43,17 +43,25 @@ struct GamerProfileView: View {
                 .padding(.bottom, 20)
             
             // Games owned section
-            Text("Games Owned")
-                .font(.body)
-                .fontWeight(.medium)
-                .padding(.leading, -180)
+            VStack {
+                Text("Games Owned")
+                    .font(.body)
+                    .fontWeight(.medium)
+                    .padding(.leading, -180)
+                Capsule()
+                    .frame(width: 150, height: 2)
+                     .offset(x: -105, y: -10)
+                    .foregroundColor(Color("mainGreen"))
+            }
             
-//          Game list horizontal scroll
+            
+            //          Game list horizontal scroll
             GameListScrollView(gamer: gamer)
             
         }// end of the big VStack which is our profile
-//            .padding(30)
+            //            .padding(30)
             .navigationBarTitle("Profile", displayMode: .inline)
+       
     }// end of the body
 }// end of the view
 

@@ -12,5 +12,6 @@ import SwiftUI
 class UserSettings: ObservableObject {
     
     @Published var notLoggedIn = true
+    @Published var username = ""
     
 }

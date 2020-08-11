@@ -15,7 +15,7 @@ struct GameListScrollView: View {
     var gamer: Gamer
     
     var body: some View {
-        // List of games the user ownes and plays
+//         List of games the user ownes and plays
         ScrollView(.horizontal, showsIndicators: false) {
             // Horizontal List (old CollectionView)
             HStack(spacing: 0) {

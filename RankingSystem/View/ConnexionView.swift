@@ -73,7 +73,7 @@ struct ConnexionView: View {
                         .foregroundColor(Color("mainGreen"))
                 }
                 
-                
+               
                 
                 TextField("Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -90,7 +90,16 @@ struct ConnexionView: View {
             Spacer()
             
             Button(action: {
-                self.showAlert.toggle()
+                if self.username == "" {
+                    self.showAlert.toggle()
+                    // trying to add a delay for now
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.showAlert.toggle()
+                    }
+                } else {
+                    self.showAlert.toggle()
+                }
+                
             }, label: {
                 Text("Validate")
                     .foregroundColor(.white)

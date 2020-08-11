@@ -23,9 +23,11 @@ struct TabSystemView: View {
                     NavigationLink(destination:
                     GamerProfileView(gamer: gamer)) {
                         RankingSystemView(gamerList: gamer)
+                            .navigationBarTitle("Leaderboard", displayMode: .large)
                     }
+//                    .navigationBarHidden(false)
                 }
-                .navigationBarTitle("Leaderboard")
+                
             }
             .tabItem {
                 Image(systemName: "list.number")
@@ -33,10 +35,12 @@ struct TabSystemView: View {
             }
             
             
+            
             // secondTab
             NavigationView {
                 UserProfileView(user: self.user)
                     .navigationBarTitle("Profile", displayMode: .inline)
+//                .navigationBarHidden(false)
             }
             .tabItem {
                 Image(systemName: "person")
@@ -46,5 +50,11 @@ struct TabSystemView: View {
         }
         .accentColor(Color("toxicGreen"))
         
+    }
+}
+
+struct TabSystemView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
